@@ -3,7 +3,9 @@ import './App.css';
 import Blog from './Pages/Blog';
 import Navbar from './Shared/Navbar';
 
+
 function App() {
+ 
   return (
    <div>
      <Navbar></Navbar>

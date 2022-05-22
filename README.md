@@ -12,7 +12,7 @@
 
 * About website=>
 * Name:
-* Framework/Library/Component Used=>
+* Framework/Library/Component/Hosting Used=>
 
 1) Tailwind  as main css framework
 2) daisy  as tailwind css component
@@ -23,7 +23,8 @@
 7) React Hook Form  in forms
 8) React Toastfify  for Toasts
 9) React Query 
-
+10) Stripe for Payment
+11) FireBase used for hosting
 
 
 

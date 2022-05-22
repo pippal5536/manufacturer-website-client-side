@@ -14,14 +14,16 @@
 * Name:
 * Framework/Library/Component Used=>
 
-1) Tailwind used as main css framework
-2) daisy used as tailwind css component
-3) React Router Used 
-4) FireBase used for authentication
-5) React Firebase hooks used for sign in, sign up and social log in
+1) Tailwind  as main css framework
+2) daisy  as tailwind css component
+3) React Router  
+4) FireBase  for authentication
+5) React Firebase hooks  for sign in, sign up and social log in
 6) Firebase sdks saved in env
-7) React Hook Form used in forms
-8) React Toastfify used for Toasts
+7) React Hook Form  in forms
+8) React Toastfify  for Toasts
+9) React Query 
+
 
 
 

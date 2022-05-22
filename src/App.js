@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Blog from './Pages/Blog';
 import Navbar from './Shared/Navbar';
+import Home from './Pages/Home/Home';
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
    <div>
      <Navbar></Navbar>
      <Routes>
+
+       <Route path="/" element={<Home/>}></Route>
        <Route path="/blog" element={<Blog/>}></Route>
      </Routes>
      <ToastContainer />

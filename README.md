@@ -24,7 +24,8 @@
 8) React Toastfify  for Toasts
 9) React Query 
 10) Stripe for Payment
-11) FireBase used for hosting
+11) FireBase  for hosting
+12) Hero Icon for Icons
 
 
 

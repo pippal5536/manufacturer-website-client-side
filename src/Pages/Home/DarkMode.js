@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { SunIcon, MoonIcon } from '@heroicons/react/solid';
+import React from 'react';
+import {MoonIcon, SunIcon} from '@heroicons/react/solid';
 
 
-const Navbar = ({ darkMode, setDarkMode }) => {
+const DarkMode = ({ darkMode, setDarkMode }) => {
+
 
     return (
-        <div>
-            <Link to="/home" >Home</Link>
-            <Link to="/blog">Blog</Link>
-         
+        <div >
+            <p>Introducing To dark Mode!</p>
             <label class="swap swap-rotate">
            
            {
@@ -19,8 +17,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 <MoonIcon className='swap-off h-5 w-5'></MoonIcon></>
            }
                </label>
+
         </div>
     );
 };
 
-export default Navbar;
+export default DarkMode;

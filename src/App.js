@@ -5,7 +5,7 @@ import Navbar from './Shared/Navbar';
 
 function App() {
   return (
-   <div className='text-6xl text-blue-600'>
+   <div>
      <Navbar></Navbar>
      <Routes>
        <Route path="/blog" element={<Blog/>}></Route>

@@ -19,6 +19,10 @@
 3) React Router Used 
 4) FireBase used for authentication
 5) React Firebase hooks used for sign in, sign up and social log in
+6) Firebase sdks saved in env
+7) React Hook Form used in forms
+8) React Toastfify used for Toasts
+
 
 
 

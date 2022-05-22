@@ -1,8 +1,8 @@
 * Private Client Repo: https://github.com/programming-hero-web-course1/manufacturer-website-client-side-pippal5536
 * Private Server Repo: https://github.com/programming-hero-web-course1/manufacturer-website-server-side-pippal5536
 
-* Live Website Link:
-* Client: 
+* Live Website Link: https://tools-manufacturers.web.app
+* Client: https://tools-manufacturers.web.app
 * Server:
 
 * Admin Email And Password=>

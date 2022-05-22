@@ -1,12 +1,53 @@
 [
 {
     "name": "hammer",
-    "image": "",
-    "description":"",
-    "quantity":7,
-    "price":60
+    "image": "https://m.media-amazon.com/images/I/71WlgNKLVjL._AC_UL480_FMwebp_QL65_.jpg",
+    "description":"WORKPRO W041091A Claw Hammer, 20 Oz",
+    "quantity":100,
+    "price":5
+
+},
+{
+    "name": "Drill Machine",
+    "image": "https://m.media-amazon.com/images/I/81sXfQXN9pS._AC_UL480_FMwebp_QL65_.jpg",
+    "description":"BOSCH Power Tools Drill Kit - PS31-2A - 12V, 3/8 Inch",
+    "quantity":100,
+    "price":10
+
+},
+{
+    "name": "Screw Driver",
+    "image": "https://m.media-amazon.com/images/I/71VEvwxE18L._AC_UL480_FMwebp_QL65_.jpg",
+    "description":"BLACK+DECKER Magnetic Screwdriver Set",
+    "quantity":100,
+    "price":8
+
+},
+{
+    "name": "Wrench",
+    "image": "https://m.media-amazon.com/images/I/71AAhHWQ4xL._AC_UL480_FMwebp_QL65_.jpg",
+    "description":"Olympia Tools 01-012 12 Adjustable Wrench",
+    "quantity":100,
+    "price":4
+
+},
+{
+    "name": "Plier",
+    "image": "https://m.media-amazon.com/images/I/51cS7kMOlpL._AC_UL480_FMwebp_QL65_.jpg",
+    "description":"DOWELL Needle Nose Pliers Long Nose Pliers 8 Inch",
+    "quantity":100,
+    "price":6
+
+},
+{
+    "name": "Shovel",
+    "image": "https://m.media-amazon.com/images/I/61p3ou0u02L._AC_UL480_FMwebp_QL65_.jpg",
+    "description":"MARTHA STEWART MTS-MDS1 27-Inch Mini Round ",
+    "quantity":100,
+    "price":8
 
 }
+
 
 
 ]

@@ -8,7 +8,7 @@ const DarkMode = ({ darkMode, setDarkMode }) => {
     return (
         <div >
             <p>Introducing To dark Mode!</p>
-            <label class="swap swap-rotate">
+            <label className="swap swap-rotate">
            
            {
                 darkMode?<> <input type="checkbox"  onClick={()=> setDarkMode(!darkMode)}/><SunIcon className='swap-off h-5 w-5' ></SunIcon> 

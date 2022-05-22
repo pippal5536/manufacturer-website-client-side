@@ -14,7 +14,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);  
 
   return (
-    <div class={` ${ darkMode && "dark" }`} >
+    <div className={  `font-mono ${ darkMode && "dark" }`} >
      
        
       <div className='text-black  dark:bg-gray-900 dark:text-white '>

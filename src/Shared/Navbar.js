@@ -10,7 +10,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <Link to="/home" >Home</Link>
             <Link to="/blog">Blog</Link>
          
-            <label class="swap swap-rotate">
+            <label className="swap swap-rotate">
            
            {
                 darkMode?<> <input type="checkbox"  onClick={()=> setDarkMode(!darkMode)}/><SunIcon className='swap-off h-5 w-5' ></SunIcon> 

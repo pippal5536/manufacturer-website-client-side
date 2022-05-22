@@ -5,19 +5,20 @@
 * Client: 
 * Server:
 
-* Admin Email And Password:
+* Admin Email And Password=>
  * Email:
  * Pssword:
 
 
-* About website:
+* About website=>
 * Name:
-* Framework/Library/Component Used:
+* Framework/Library/Component Used=>
 
 1) Tailwind used as main css framework
 2) daisy used as tailwind css component
 3) React Router Used 
 4) FireBase used for authentication
+5) React Firebase hooks used for sign in, sign up and social log in
 
 
 

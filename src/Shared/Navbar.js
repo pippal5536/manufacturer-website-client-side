@@ -1,14 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SunIcon, MoonIcon, MenuAlt4Icon } from '@heroicons/react/solid';
+import auth from './../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 
 
 const Navbar = ({ darkMode, setDarkMode }) => {
+    const [user] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+      
+      };
     const menuItems = <>
         <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/" >Home</Link></li>
+        {
+            user && <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/dashboard">Dashboard</Link></li>
+        }
         <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/blog">Blog</Link></li>
-        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/login">Login</Link></li>
         <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/portfolio">My Portfolio</Link></li>
+      
+        <li>{user ? <button className=' hover:bg-gray-200 hover:text-black dark:hover:text-black '  onClick={logout} >Log Out</button> : <Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/login">Login</Link>}</li>
+        <li>{user ? <p>{user?.displayName}</p>:""}</li>
+
+
         <label className="swap swap-rotate">
 
             {

@@ -5,6 +5,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import toolsPic from "../../Assets/Images/tools-login.png"
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import Loading from './../../Shared/Loading';
 
 
 const Login = () => {
@@ -19,13 +20,21 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     // On Submit For Sign In
     const onSubmit = data => {
-        console.log(data,'came from onSubmit => Login Component')
         signInWithEmailAndPassword(data.email, data.password);
     }
 
     // google Sign in
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
+    // loading spinner
+    if (loading || googleLoading) {
+        return <Loading ></Loading>
+    }
+   // firebase login error
+   let firebaseRegistrationError;
+   if (error  ) {
+       firebaseRegistrationError = <p className='text-red-500'><small> You have typed the wrong email or password. Please try again. </small></p>
+   }
 
 
 
@@ -41,7 +50,7 @@ const Login = () => {
 
 
                     <div className='bg-base-100 dark:bg-gray-800 dark:text-white card shadow   mx-8 grid grid-cols-1 justify-items-center '>
-                        <form className='' onSubmit={handleSubmit(onSubmit)}>
+                        <form  onSubmit={handleSubmit(onSubmit)}>
 
                             <div className="form-control mt-1 ">
                                 <label className="label ">
@@ -95,11 +104,12 @@ const Login = () => {
 
 
                             <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-1' type="submit" value="Login" />
-                          </form>
+                            {firebaseRegistrationError}
+                        </form>
                         <p className=' text-center mt-1'>New User? Register <Link className='text-blue-600' to="/register">here</Link>.</p>
                         <div className="divider mt-[-1px] ">----OR----</div>
                         {/* Sign in with google */}
-                        <button onClick={() => signInWithGoogle()} className='  bg-gradient-to-r from-gray-500 hover:to-black btn mt-[-12px]'><span className='flex gap-2'><p>Sign In With Google</p><FcGoogle className='h-[14px] w-[14px]'></FcGoogle></span></button>
+                        <button onClick={() => signInWithGoogle()} className='  bg-gradient-to-r from-gray-500 hover:to-black btn mt-[-12px] '><span className='flex gap-2'><p>Sign In With Google</p><FcGoogle className='h-[14px] w-[14px]'></FcGoogle></span></button>
 
                     </div>
                 </div>

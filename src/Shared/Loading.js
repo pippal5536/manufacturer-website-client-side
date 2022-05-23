@@ -1,10 +1,27 @@
-import React from 'react';
+import React,{ useState } from "react";
+import { css } from "@emotion/react";
+import ClockLoader from "react-spinners/ClockLoader";
 
-const Loading = () => {
+
+const Loading = ({darkMode,setDarkMode}) => {
+    const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
+    let [loading, setLoading] = useState(true);
+    let [color,setColor] = useState('white')
+    
+  
     return (
-        <div className="flex items-center justify-center ">
-            <div className="w-16 h-16 border-b-2 border-gray-900 rounded-full animate-spin"></div>
-        </div>
+        <div className="sweet-loading">
+      
+  
+        <ClockLoader
+ color={color}
+  loading={loading} css={override} size={150} />
+      </div>
+   
     );
 };
 

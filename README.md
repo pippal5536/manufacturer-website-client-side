@@ -27,6 +27,7 @@
 11) FireBase  for hosting
 12) Hero Icon for Icons
 13) React Icon for Icons
+14) react spinner for spinner
 
 
 

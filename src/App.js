@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Register from './Pages/Login/Register';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
           
           
         </Routes>

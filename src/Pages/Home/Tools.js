@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 const Tools = () => {
     // load tools from mongo db in ui
     const { data:tools,isLoading,refetch } = useQuery([], () =>
-    fetch('http://localhost:4000/tool')
+    fetch('https://rocky-depths-16422.herokuapp.com/tool')
     .then(res => res.json() )
 )
 if(isLoading){
@@ -14,8 +14,8 @@ if(isLoading){
         }
     return (
         <div >
-              <p className='text-center text-primary'>Tools </p>
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 m-5'>
+              <p className='text-center dark:text-white text-2xl font-bold'>Tools </p>
+              <div className='min-h-screen grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4 my-6 mx-12 '>
               {
                     tools.map((tool) => <Tool
 

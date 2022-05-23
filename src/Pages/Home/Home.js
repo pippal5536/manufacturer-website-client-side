@@ -5,16 +5,18 @@ import Tools from './Tools';
 import Footer from './../../Shared/Footer';
 import DarkMode from './DarkMode';
 import ContactUs from './ContactUs';
+import Reviews from './Reviews';
 
 
 const Home = ({darkMode, setDarkMode}) => {
     return (
         <div >
-            This is Home page
+           
            
             <Banner></Banner>
             <Tools></Tools>
             <BusinessSummary></BusinessSummary>
+            <Reviews></Reviews>
             <DarkMode   darkMode={darkMode} setDarkMode={setDarkMode}> </DarkMode>
             <ContactUs></ContactUs>
             <Footer></Footer>

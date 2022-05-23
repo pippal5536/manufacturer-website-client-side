@@ -6,6 +6,7 @@ import './App.css';
 import Blog from './Pages/Blog';
 import Navbar from './Shared/Navbar';
 import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login';
 
 
 
@@ -14,7 +15,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);  
 
   return (
-    <div className={  `font-mono ${ darkMode && "dark" }`} >
+    <div className={  `font-mono bg-base-300 ${ darkMode && "dark" }`} >
      
        
       <div className='text-black  dark:bg-gray-900 dark:text-white '>
@@ -23,8 +24,9 @@ function App() {
 
         <Routes>
 
-          <Route path="/home" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} ></Home>}></Route>
+          <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} ></Home>}></Route>
           <Route path="/blog" element={<Blog />}></Route>
+          <Route path="/login" element={<Login />}></Route>
           
           
         </Routes>

@@ -19,7 +19,7 @@ function App() {
     <div className={  `font-mono bg-base-300 ${ darkMode && "dark" }`} >
      
        
-      <div className='text-black  dark:bg-gray-900 dark:text-white '>
+      <div className=' dark:bg-gray-900 dark:text-white '>
         
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} ></Navbar>
 

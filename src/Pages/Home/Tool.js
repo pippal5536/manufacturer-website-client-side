@@ -16,7 +16,7 @@ const Tool = ({tool,refetch}) => {
           <h2 className="card-title">Price Per Unit:{price}</h2>
           <p className='text-xl'>{description}</p>
           <div className="card-actions">
-            <Link to="/purchase" className="btn btn-primary">Purchase</Link>
+            <Link to="/purchase" className="btn  bg-gradient-to-r from-gray-500 hover:to-black">Purchase</Link>
           </div>
         </div>
       </div>

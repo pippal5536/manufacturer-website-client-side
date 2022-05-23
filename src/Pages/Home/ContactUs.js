@@ -9,7 +9,7 @@ const ContactUs = () => {
                     <h1 class="text-5xl font-bold">Contact Us</h1>
                     <p class="py-6">Phone: 0189XXXXXX</p>
                     <p class="py-6">Email: tool-manufacturer@gmail.com</p>
-                    <button class="btn btn-primary">Contact Us</button>
+                    <button class="btn  bg-gradient-to-r from-gray-500 hover:to-black">Contact Us</button>
                 </div>
             </div>
         </div>

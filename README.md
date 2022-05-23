@@ -26,6 +26,7 @@
 10) Stripe for Payment
 11) FireBase  for hosting
 12) Hero Icon for Icons
+13) React Icon for Icons
 
 
 

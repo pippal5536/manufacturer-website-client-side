@@ -10,6 +10,9 @@ import Login from './Pages/Login/Login';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Register from './Pages/Login/Register';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddReview from './Pages/Dashboard/AddReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 
 
@@ -32,7 +35,12 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path="review" element={<AddReview></AddReview>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+
+          </Route>
           
           
         </Routes>

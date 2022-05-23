@@ -14,12 +14,12 @@ const Loading = ({darkMode,setDarkMode}) => {
     
   
     return (
-        <div className="sweet-loading">
+        <div className="sweet-loading cursor-progress">
       
   
         <ClockLoader
  color={color}
-  loading={loading} css={override} size={150} />
+  loading={loading} css={override} size={500} />
       </div>
    
     );

@@ -13,6 +13,8 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import RequireAuth from './Pages/Login/RequireAuth';
+import Purchase from './Pages/Dashboard/Purchase';
 
 
 
@@ -32,10 +34,11 @@ function App() {
 
           <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} ></Home>}></Route>
           <Route path="/blog" element={<Blog />}></Route>
+          <Route path="/purchase" element={<RequireAuth><Purchase /></RequireAuth>}></Route>
           <Route path="/portfolio" element={<Portfolio />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>

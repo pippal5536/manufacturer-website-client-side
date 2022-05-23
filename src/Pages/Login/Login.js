@@ -3,12 +3,16 @@ import { useForm } from 'react-hook-form';
 import auth from './../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import toolsPic from "../../Assets/Images/tools-login.png"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import Loading from './../../Shared/Loading';
 
 
 const Login = () => {
+    // protected route
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     // Form
     const { register, formState: { errors }, handleSubmit } = useForm();
     // Sign In
@@ -21,11 +25,16 @@ const Login = () => {
     // On Submit For Sign In
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
+        
+        
     }
 
     // google Sign in
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-
+    // redirect to page
+    if(user || googleUser){
+        navigate(from, { replace: true });
+    }
     // loading spinner
     if (loading || googleLoading) {
         return <Loading ></Loading>

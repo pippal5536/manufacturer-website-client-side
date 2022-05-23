@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import bannerImage from "../../Assets/Images/banner-image.jpg"
+import auth from './../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Banner = () => {
+    const [user, loading] = useAuthState(auth);
     return (
         <div className='mx-12 mt-6 card shadow min-h-screen bg-base-100 flex justify-center items-center dark:bg-gray-800 dark:text-white'>
             <div class="hero  bg-base-100  dark:bg-gray-800 dark:text-white">
@@ -12,7 +15,9 @@ const Banner = () => {
                     <div class="max-w-md mr-[8rem] text-left">
                         <h1 class="text-5xl font-bold   ">Welcome To Tool World!</h1>
                         <p class="py-6 ">Here you can buy tools like hammer, drill machine, screw driver , wrench etc. </p>
-                        <Link to="/login" class=" btn   bg-gradient-to-r from-gray-500 hover:to-black ">Get Started</Link>
+                       {
+                           user?<Link class=" btn   bg-gradient-to-r from-gray-500 hover:to-black " to="/dashboard">Get Started</Link>: <Link to="/login" class=" btn   bg-gradient-to-r from-gray-500 hover:to-black ">Get Started</Link>
+                       }
                     </div>
                 </div>
             </div>

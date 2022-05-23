@@ -3,10 +3,11 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useForm } from 'react-hook-form';
 import auth from './../../firebase.init';
 import Loading from './../../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import registerImage from '../../Assets/Images/register-image.jpg'
 
 const Register = () => {
+    const navigate = useNavigate();
     // register
     const { register, formState: { errors }, handleSubmit } = useForm();
     // firebase hook- create user
@@ -18,7 +19,10 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     // firebase hook- create user with name
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
+     // redirect to page
+     if(user){
+        navigate('/dashboard');
+     }
     
     // loading spinner
     if (loading || updating) {

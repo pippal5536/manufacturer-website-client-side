@@ -10,7 +10,7 @@ const DarkMode = ({ darkMode, setDarkMode }) => {
 
           
           <div>
-               <span className=" indicator-item badge badge-secondary ">new</span>
+               <span className=" indicator-item badge text-white bg-red-600 ">new</span>
                <div className="hero card   bg-base-100 place-items-center shadow  dark:text-white dark:bg-gray-800">
                 <div className="hero-content text-center">
                     <div>

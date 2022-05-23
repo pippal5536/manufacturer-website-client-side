@@ -1,8 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import auth from './../../firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import toolsPic from "../../Assets/Images/tools-login.png"
+import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 
 
@@ -18,9 +19,13 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     // On Submit For Sign In
     const onSubmit = data => {
-        // console.log(data,'came from onSubmit => Login Component')
+        console.log(data,'came from onSubmit => Login Component')
         signInWithEmailAndPassword(data.email, data.password);
     }
+
+    // google Sign in
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
 
 
 
@@ -28,24 +33,24 @@ const Login = () => {
 
         <section className=" mx-8 min-h-screen">
             <h1 className='mt-4 text-center text-4xl'>Login Page</h1>
-            <div class="  w-full mt-4">
-                <div class=" grid sm:grid-cols-1 md:grid-cols-2 gap-y-4  ml-6">
-                   <div class=" sm:hidden md:block">
-                   <img src={toolsPic} class=" w-full card shadow-2xl" />
-                   </div>
+            <div className="  w-full mt-4">
+                <div className=" grid sm:grid-cols-1 md:grid-cols-2 gap-y-4  ml-6">
+                    <div className=" sm:hidden md:block">
+                        <img src={toolsPic} className=" w-full card shadow-2xl" />
+                    </div>
 
 
-                    <div className='bg-base-100 dark:bg-gray-800 dark:text-white card shadow  p-16 mx-8 grid grid-cols-1 gap-8'>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className='bg-base-100 dark:bg-gray-800 dark:text-white card shadow   mx-8 grid grid-cols-1 justify-items-center '>
+                        <form className='' onSubmit={handleSubmit(onSubmit)}>
 
-                            <div className="form-control  max-w-xs">
+                            <div className="form-control mt-1 ">
                                 <label className="label ">
                                     <span className="dark:text-white label-text">Enter Your Email:</span>
                                 </label>
                                 <input
                                     type="email"
                                     placeholder="Email"
-                                    className="input input-bordered w-full max-w-xs dark:bg-gray-900 dark:text-white"
+                                    className="input input-bordered w-full  dark:bg-gray-900 dark:text-white mt-[-1px]"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -62,14 +67,14 @@ const Login = () => {
                                     {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                                 </label>
                             </div>
-                            <div className="form-control w-full max-w-xs">
-                                <label className="label">
+                            <div className="form-control w-full ">
+                                <label className="label mt-[-10px]">
                                     <span className=" dark:text-white label-text">Enter Your Password:</span>
                                 </label>
                                 <input
                                     type="password"
                                     placeholder="Password"
-                                    className="input dark:bg-gray-900 dark:text-white input-bordered w-full max-w-xs"
+                                    className="input dark:bg-gray-900 dark:text-white input-bordered w-full "
                                     {...register("password", {
                                         required: {
                                             value: true,
@@ -86,11 +91,16 @@ const Login = () => {
                                     {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                                 </label>
                             </div>
-                          
-                           
 
-                            <input className='btn w-full max-w-xs text-white    bg-gradient-to-r from-gray-500 hover:to-black' type="submit" value="Login" />
-                        </form>
+
+
+                            <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-1' type="submit" value="Login" />
+                          </form>
+                        <p className=' text-center mt-1'>New User? Register <Link className='text-blue-600' to="/register">here</Link>.</p>
+                        <div className="divider mt-[-1px] ">----OR----</div>
+                        {/* Sign in with google */}
+                        <button onClick={() => signInWithGoogle()} className='  bg-gradient-to-r from-gray-500 hover:to-black btn mt-[-12px]'><span className='flex gap-2'><p>Sign In With Google</p><FcGoogle className='h-[14px] w-[14px]'></FcGoogle></span></button>
+
                     </div>
                 </div>
             </div>

@@ -3,9 +3,9 @@ import React from 'react';
 
 const BusinessSummary = () => {
     return (
-       <div className='mx-12 '>
+       <div className='mx-12 mt-[-49px]'>
            <p className='text-center text-2xl dark:text-white  p-4 m-4 font-bold'>See Our Business Summary</p>
-            <div className=' card shadow '>
+            <div className=' card shadow mt-[-14px]'>
             
             <div class="stats stats-vertical lg:stats-horizontal shadow w-full dark:bg-gray-800 dark:text-white ">
 

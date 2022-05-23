@@ -5,10 +5,10 @@ import { SunIcon, MoonIcon, MenuAlt4Icon } from '@heroicons/react/solid';
 
 const Navbar = ({ darkMode, setDarkMode }) => {
     const menuItems = <>
-        <li><Link to="/" >Home</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/portfolio">My Portfolio</Link></li>
+        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/" >Home</Link></li>
+        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/blog">Blog</Link></li>
+        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/login">Login</Link></li>
+        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/portfolio">My Portfolio</Link></li>
         <label className="swap swap-rotate">
 
             {

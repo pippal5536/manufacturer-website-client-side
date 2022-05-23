@@ -14,8 +14,8 @@ if(isLoading){
         }
     return (
         <div >
-              <p className='text-center dark:text-white text-2xl font-bold'>Tools </p>
-              <div className='min-h-screen grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4 my-6 mx-12 '>
+              <p className='text-center dark:text-white text-2xl font-bold mt-[14px]'>Tools </p>
+              <div className='min-h-screen grid grid-cols-1 md:grid-cols-3 gap-x-8 p-8 gap-y-[22px] mt-[-14px]  '>
               {
                     tools.map((tool) => <Tool
 

@@ -37,6 +37,7 @@ const Login = () => {
    useEffect((()=>{
        if(token){
         navigate(from, { replace: true });
+      
        }
    }),[token,navigate,from])
     // loading spinner

@@ -1,10 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Purchase from './Purchase';
+import {  useNavigate } from 'react-router-dom';
 
-const Tool = ({ tool, setPurchase }) => {
-  const { name, image, description, quantity, price } = tool;
+
+
+
+
+const Tool = ({ tool }) => {
+
+  const navigate = useNavigate();
+
+
+  const { _id,name, image, description, quantity, price } = tool;
   const minimumOrderQuantity = parseInt(quantity * (25 / 100))
+
+  const purchasePage = id =>{
+    navigate(`/purchase/${id}`);
+    console.log(id)
+}
+
+
   return (
     <div className=" bg-base-100 shadow-xl text-black  dark:bg-gray-900 shadow  dark:text-white dark:bg-gray-800 w-[100%] h-[100%] card">
       <figure className="px-10 pt-10 ">
@@ -18,15 +32,15 @@ const Tool = ({ tool, setPurchase }) => {
         <h2 className=" text-lg tracking-tight leading-loose">Price Per Unit:{price}</h2>
         <p className='text-xl text-base tracking-tight leading-loose'>{description}</p>
         <div className="card-actions ">
-          {/* <button  for="my-modal" className="btn  bg-gradient-to-r from-gray-500 hover:to-black">Purchase</button> */}
-          <label
-            onClick={() => setPurchase(tool)}
-             htmlFor="modal-1"
-            className='btn btn-primary'
-          >Purchase</label>
+          
+        <button onClick={() => purchasePage(_id)} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>
+
+
+       
+        
+
         </div>
       </div>
-      {/* <Purchase tool={tool} minimumOrderQuantity={minimumOrderQuantity} refetch={refetch}></Purchase> */}
     </div>
   );
 };

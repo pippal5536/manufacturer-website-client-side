@@ -1,11 +1,12 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import auth from './../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import toolsPic from "../../Assets/Images/tools-login.png"
+import bannerImage from "../../Assets/Images/banner-image.jpg"
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import Loading from './../../Shared/Loading';
+import useToken from './../../Hooks/useToken';
 
 
 const Login = () => {
@@ -32,16 +33,19 @@ const Login = () => {
     // google Sign in
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     // redirect to page
-    if(user || googleUser){
+    const [token] = useToken(user || googleUser);
+   useEffect((()=>{
+       if(token){
         navigate(from, { replace: true });
-    }
+       }
+   }),[token,navigate,from])
     // loading spinner
     if (loading || googleLoading) {
         return <Loading ></Loading>
     }
    // firebase login error
    let firebaseRegistrationError;
-   if (error  ) {
+   if (error || googleError ) {
        firebaseRegistrationError = <p className='text-red-500'><small> You have typed the wrong email or password. Please try again. </small></p>
    }
 
@@ -54,7 +58,7 @@ const Login = () => {
             <div className="  w-full mt-4">
                 <div className=" grid sm:grid-cols-1 md:grid-cols-2 gap-y-4  ml-6">
                     <div className=" sm:hidden md:block">
-                        <img src={toolsPic} className=" w-full card shadow-2xl" />
+                        <img src={bannerImage} className=" w-full h-full card shadow-2xl" />
                     </div>
 
 

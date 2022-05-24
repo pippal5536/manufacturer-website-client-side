@@ -1,10 +1,11 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from './../../firebase.init';
 import Loading from './../../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import registerImage from '../../Assets/Images/register-image.jpg'
+import useToken from './../../Hooks/useToken';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -19,10 +20,14 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     // firebase hook- create user with name
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user );
      // redirect to page
-     if(user){
-        navigate('/dashboard');
-     }
+     useEffect(()=>{
+        if(token){
+            navigate('/dashboard');
+         }
+     },[token,navigate])
+   
     
     // loading spinner
     if (loading || updating) {
@@ -37,7 +42,6 @@ const Register = () => {
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        console.log(data);
 
 
     }

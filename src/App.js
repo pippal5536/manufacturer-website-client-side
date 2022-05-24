@@ -14,7 +14,7 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import RequireAuth from './Pages/Login/RequireAuth';
-import Purchase from './Pages/Dashboard/Purchase';
+import Purchase from './Pages/Home/Purchase';
 
 
 

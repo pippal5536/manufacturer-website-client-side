@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Tool from './Tool';
 import Loading from './../../Shared/Loading';
 import { useQuery } from 'react-query';
+import Purchase from './Purchase';
 
 const Tools = () => {
+    const [purchase, setPurchase] = useState(null);
     // load tools from mongo db in ui
     const { data:tools,isLoading,refetch } = useQuery([], () =>
     fetch('https://rocky-depths-16422.herokuapp.com/tool')
@@ -21,11 +23,20 @@ if(isLoading){
 
                         key={tool._id}
                         tool={tool}
-                        refetch={refetch}
-
+                        setPurchase={setPurchase}
                     ></Tool>)
                 }
             </div>
+            {
+                purchase && <Purchase
+                
+
+                    purchase={purchase}
+                    setPurchase={setPurchase}
+                    refetch={refetch}
+                ></Purchase>
+            }
+          
         </div>
     );
 };

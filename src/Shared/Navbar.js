@@ -13,7 +13,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     const [user] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
-
+        localStorage.removeItem('accessToken');
     };
     const menuItems = <>
         <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/" >Home</Link></li>

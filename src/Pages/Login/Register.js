@@ -130,7 +130,7 @@ const Register = () => {
 
 
 
-                            <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-[5px] mb-4' type="submit" value="Login" />
+                            <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-[5px] mb-4' type="submit" value="Register" />
                             {firebaseRegistrationError}
                         </form>
                         <p className=' text-center mt-1 mb-1'>Already An User? Login <Link className='text-blue-600' to="/login">here</Link>.</p>

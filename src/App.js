@@ -16,15 +16,20 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import Payment from './Pages/Dashboard/Payment';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 
 
 
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);  
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className={  `font-mono bg-base-300 ${ darkMode && "dark" }`} >
+    <div className={`font-mono bg-base-300 ${darkMode && "dark"}`} >
       <div className=' dark:bg-gray-900 dark:text-white '>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} ></Navbar>
         <Routes>
@@ -36,10 +41,14 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-          <Route index element={<MyOrders></MyOrders>}></Route>
-          <Route path="review" element={<AddReview></AddReview>}></Route>
-          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
-          <Route path="payment/:id" element={<Payment></Payment>}></Route>
+            <Route index element={<MyOrders></MyOrders>}></Route>
+            <Route path="review" element={<AddReview></AddReview>}></Route>
+            <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
+            <Route path="payment/:id" element={<Payment></Payment>}></Route>
+            <Route path="manageorder" element={<RequireAdmin><ManageAllOrders/></RequireAdmin>}></Route>
+            <Route path="addproduct" element={<RequireAdmin><AddProduct/></RequireAdmin>}></Route>
+            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
+            <Route path="manageproduct" element={<RequireAdmin><ManageProducts/></RequireAdmin>}></Route>
           </Route>
         </Routes>
         <ToastContainer />

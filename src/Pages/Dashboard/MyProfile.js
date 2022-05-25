@@ -60,7 +60,7 @@ const MyProfile = () => {
                         <span className="dark:text-white label-text mx-4" required> Your Education:</span>
                     </label>
 
-                    <input  {...register("education")} type="text"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
+                    <input  {...register("education")} type="text"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4 dark:border dark:border-white"  />
 
                 </div>
                 <div className="form-control mt-1 ">
@@ -68,23 +68,23 @@ const MyProfile = () => {
                         <span className="dark:text-white label-text mx-4"> Your location:</span>
                     </label>
 
-                    <input  {...register("location")} required type="text"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
+                    <input  {...register("location")} required type="text"  className="input dark:border dark:border-white dark:bg-gray-900 dark:text-white input-bordered mx-4" />
 
                 </div>
                 <div className="form-control mt-1 ">
                     <label className="label ">
-                        <span className="dark:text-white label-text mx-4"> Your Phone Number:</span>
+                        <span className="dark:text-white label-text mx-4 "> Your Phone Number:</span>
                     </label>
 
-                    <input  {...register("phone")} required type="number"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
+                    <input  {...register("phone")} required type="number"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4 dark:border dark:border-white" />
 
                 </div>
                 <div className="form-control mt-1 ">
                     <label className="label ">
-                        <span className="dark:text-white label-text mx-4"> Your Linked In Profile:</span>
+                        <span className="dark:text-white label-text mx-4 "> Your Linked In Profile:</span>
                     </label>
 
-                    <input  {...register("linkedInProfile")} required type="url"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
+                    <input  {...register("linkedInProfile")} required type="url"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4 dark:border dark:border-white" />
 
                 </div>
                

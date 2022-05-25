@@ -10,7 +10,6 @@ const Dashboard = () => {
             <input id="sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content ">
                 {/* Main Body */}
-                <h2 className='text-4xl mt-2 text-center '>My Orders</h2>
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side ">

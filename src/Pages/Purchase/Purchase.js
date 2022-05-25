@@ -47,6 +47,7 @@ const Purchase = () => {
                if(data){
                    toast.success("Your tool has been purchased!")
                }
+             
             })
 
     }

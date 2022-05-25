@@ -15,6 +15,7 @@ import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
+import Payment from './Pages/Dashboard/Payment';
 
 
 
@@ -24,20 +25,13 @@ function App() {
 
   return (
     <div className={  `font-mono bg-base-300 ${ darkMode && "dark" }`} >
-     
-       
       <div className=' dark:bg-gray-900 dark:text-white '>
-        
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} ></Navbar>
-
         <Routes>
-
           <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} ></Home>}>
-          
           </Route>
           <Route path="/purchase/:purchaseId" element={<RequireAuth><Purchase /></RequireAuth>}></Route>
           <Route path="/blog" element={<Blog />}></Route>
-         
           <Route path="/portfolio" element={<Portfolio />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
@@ -45,14 +39,11 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
-
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           </Route>
-          
-          
         </Routes>
         <ToastContainer />
       </div>
-
     </div>
   );
 }

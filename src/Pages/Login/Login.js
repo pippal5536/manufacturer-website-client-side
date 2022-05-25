@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import auth from './../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -26,29 +26,25 @@ const Login = () => {
     // On Submit For Sign In
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
-        
-        
     }
-
     // google Sign in
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     // redirect to page
     const [token] = useToken(user || googleUser);
-   useEffect((()=>{
-       if(token){
-        navigate(from, { replace: true });
-      
-       }
-   }),[token,navigate,from])
+    useEffect((() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }), [token, navigate, from])
     // loading spinner
     if (loading || googleLoading) {
         return <Loading ></Loading>
     }
-   // firebase login error
-   let firebaseRegistrationError;
-   if (error || googleError ) {
-       firebaseRegistrationError = <p className='text-red-500'><small> You have typed the wrong email or password. Please try again. </small></p>
-   }
+    // firebase login error
+    let firebaseRegistrationError;
+    if (error || googleError) {
+        firebaseRegistrationError = <p className='text-red-500'><small> You have typed the wrong email or password. Please try again. </small></p>
+    }
 
 
 
@@ -64,7 +60,7 @@ const Login = () => {
 
 
                     <div className='bg-base-100 dark:bg-gray-800 dark:text-white card shadow   mx-8 grid grid-cols-1 justify-items-center '>
-                        <form  onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit(onSubmit)}>
 
                             <div className="form-control mt-1 ">
                                 <label className="label ">
@@ -105,7 +101,7 @@ const Login = () => {
                                         },
                                         minLength: {
                                             value: 6,
-                                            message: 'Must be 6 characters or longer'
+                                            message: 'Your password must be 6 characters or longer'
                                         }
                                     })}
                                 />
@@ -114,9 +110,6 @@ const Login = () => {
                                     {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                                 </label>
                             </div>
-
-
-
                             <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-1' type="submit" value="Login" />
                             {firebaseRegistrationError}
                         </form>

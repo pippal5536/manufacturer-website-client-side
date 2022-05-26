@@ -21,12 +21,17 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import RequireAdmin from './Pages/Login/RequireAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import useAdmin from './Hooks/useAdmin';
 
 
 
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
 
   return (
     <div className={`font-mono bg-base-300 ${darkMode && "dark"}`} >
@@ -41,14 +46,13 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-            <Route index element={<MyOrders></MyOrders>}></Route>
-            <Route path="review" element={<AddReview></AddReview>}></Route>
+            {!admin ? <Route index element={<MyOrders></MyOrders>}></Route> : <Route index element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
+            }            <Route path="review" element={<AddReview></AddReview>}></Route>
             <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
             <Route path="payment/:id" element={<Payment></Payment>}></Route>
-            <Route path="manageorder" element={<RequireAdmin><ManageAllOrders/></RequireAdmin>}></Route>
-            <Route path="addproduct" element={<RequireAdmin><AddProduct/></RequireAdmin>}></Route>
-            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
-            <Route path="manageproduct" element={<RequireAdmin><ManageProducts/></RequireAdmin>}></Route>
+            <Route path="manageorder" element={<RequireAdmin><ManageAllOrders /></RequireAdmin>}></Route>
+            <Route path="makeadmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
+            <Route path="manageproduct" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
           </Route>
         </Routes>
         <ToastContainer />

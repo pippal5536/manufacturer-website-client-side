@@ -1,22 +1,23 @@
 import React from 'react';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './../../firebase.init';
+import useAdmin from './../../Hooks/useAdmin';
 
 
 
 
 
 const Tool = ({ tool }) => {
-
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   const navigate = useNavigate();
-
-
-  const { _id,name, image, description, quantity, price } = tool;
+  const { _id, name, image, description, quantity, price } = tool;
   const minimumOrderQuantity = parseInt(quantity * (25 / 100))
-
-  const purchasePage = id =>{
+  const purchasePage = id => {
     navigate(`/purchase/${id}`);
     console.log(id)
-}
+  }
 
 
   return (
@@ -27,18 +28,13 @@ const Tool = ({ tool }) => {
       <div className="card-body sm:mx-14    text-start ">
         <h2 className=" text-4xl card-title uppercase  ">{name}</h2>
         <h2 className=" text-lg ">Minimum Order Quantity: {minimumOrderQuantity}</h2>
-        <h2 className=" text-lg tracking-tight leading-loose">Available Quantity: {quantity}</h2>
+        <h2 className=" text-lg tracking-tight leading-loose">Total Quantity: {quantity}</h2>
 
         <h2 className=" text-lg tracking-tight leading-loose">Price Per Unit:{price}</h2>
         <p className='text-xl text-base tracking-tight leading-loose'>{description}</p>
         <div className="card-actions ">
-          
-        <button onClick={() => purchasePage(_id)} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>
 
-
-       
-        
-
+          {!admin?<button onClick={() => purchasePage(_id)} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>:<button disabled className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>}
         </div>
       </div>
     </div>

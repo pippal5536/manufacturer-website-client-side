@@ -33,10 +33,10 @@ const Tool = ({ tool }) => {
         <h2 className=" text-lg tracking-tight leading-loose">Price Per Unit:{price}</h2>
         <p className='text-xl text-base tracking-tight leading-loose'>{description}</p>
         <div className="card-actions ">
-          {/* {!admin ? <button onClick={() => {
+          {!admin ? <button onClick={() => {
             purchasePage(_id)
-          }} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button> : <button disabled className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>} */}
-          <Link to={`/book/${_id}`}>Book</Link>
+          }} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button> : <button disabled className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>}
+
         </div>
       </div>
     </div>

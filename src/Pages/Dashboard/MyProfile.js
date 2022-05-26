@@ -87,7 +87,7 @@ const MyProfile = () => {
                 </div>
                
               
-                <input type="submit" value="Update your profile" className='btn btn-primary mt-8 ml-4' />
+                <input type="submit" value="Update your profile" className='btn  bg-gradient-to-r from-gray-500 hover:to-black m-4' />
 
             </form>
 

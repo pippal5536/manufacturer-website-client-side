@@ -28,7 +28,7 @@ const Tool = ({ tool }) => {
       <div className="card-body sm:mx-14    text-start ">
         <h2 className=" text-4xl card-title uppercase  ">{name}</h2>
         <h2 className=" text-lg ">Minimum Order Quantity: {minimumOrderQuantity}</h2>
-        <h2 className=" text-lg tracking-tight leading-loose">Total Quantity: {quantity}</h2>
+        <h2 className=" text-lg tracking-tight leading-loose">Available Quantity: {quantity}</h2>
 
         <h2 className=" text-lg tracking-tight leading-loose">Price Per Unit:{price}</h2>
         <p className='text-xl text-base tracking-tight leading-loose'>{description}</p>

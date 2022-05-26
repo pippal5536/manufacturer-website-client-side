@@ -28,7 +28,7 @@ const Dashboard = () => {
                     <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/dashboard/myprofile">My Profile</Link></li>
                     {admin && <>
                         <li><Link to="/dashboard/manageorder">Manage All Orders</Link></li>
-                        <li><Link to="/dashboard/addproduct">Add A Tool</Link></li>
+                        <li><Link to="/dashboard">Add A Tool</Link></li>
                         <li><Link to="/dashboard/makeadmin">Make Admin</Link></li>
                         <li><Link to="/dashboard/manageproduct">Manage Products</Link></li>
                     </>}

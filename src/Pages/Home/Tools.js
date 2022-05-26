@@ -14,7 +14,7 @@ const Tools = () => {
     }
     return (
         <div >
-            <p className='text-center dark:text-white text-2xl font-bold mt-[14px]'>Tools </p>
+            <p className='text-center text-blue-600 text-4xl font-bold mt-[14px]'>Tools </p>
             <div className='min-h-screen grid grid-cols-1 md:grid-cols-3 gap-x-8 p-8 gap-y-[22px] mt-[-14px]  '>
                 {
                     tools.map((tool) => <Tool

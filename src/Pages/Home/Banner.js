@@ -14,10 +14,10 @@ const Banner = () => {
                 <div className="hero-content   flex-col lg:flex-row-reverse p-8 " >
                 <img src={toolsPic} className=" h-[20rem] w-full rounded-lg shadow-2xl " />
                     <div className="max-w-md mr-[8rem] text-left">
-                        <h1 className="text-5xl font-bold   ">Welcome To Tool World!</h1>
+                        <h1 className="text-5xl font-bold   "><span className='text-blue-600'>Welcome To</span> <span className='text-cyan-600'>Tool World!</span></h1>
                         <p className="py-6 ">Here you can buy tools like hammer, drill machine, screw driver , wrench etc. </p>
                        {
-                           user?<Link className=" btn   bg-gradient-to-r from-gray-500 hover:to-black " to="/dashboard">Get Started</Link>: <Link to="/login" className=" btn   bg-gradient-to-r from-gray-500 hover:to-black ">Get Started</Link>
+                           user?<Link className=" btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600  " to="/dashboard">Get Started</Link>: <Link to="/login" className=" btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600  ">Get Started</Link>
                        }
                     </div>
                 </div>

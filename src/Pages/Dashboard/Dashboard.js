@@ -21,16 +21,16 @@ const Dashboard = () => {
                     {/* <!-- Sidebar content here --> */}
                     {
                       !admin&&  <>
-                          <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/dashboard">My Orders</Link></li>
-                    <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/dashboard/review">Add A review</Link></li>
+                          <li><Link className=' hover:bg-cyan-600 hover:text-black dark:hover:text-white  ' to="/dashboard">My Orders</Link></li>
+                    <li><Link className='hover:bg-cyan-600 hover:text-black dark:hover:text-white  ' to="/dashboard/review">Add A review</Link></li>
                         </>
                     }
-                    <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/dashboard/myprofile">My Profile</Link></li>
+                    <li><Link className='hover:bg-cyan-600 hover:text-black dark:hover:text-white  ' to="/dashboard/myprofile">My Profile</Link></li>
                     {admin && <>
-                        <li><Link to="/dashboard/manageorder">Manage All Orders</Link></li>
-                        <li><Link to="/dashboard">Add A Tool</Link></li>
-                        <li><Link to="/dashboard/makeadmin">Make Admin</Link></li>
-                        <li><Link to="/dashboard/manageproduct">Manage Products</Link></li>
+                        <li className=' rounded hover:bg-cyan-600 hover:text-black dark:hover:text-white '><Link to="/dashboard/manageorder">Manage All Orders</Link></li>
+                        <li className='rounded hover:bg-cyan-600 hover:text-black dark:hover:text-white '><Link to="/dashboard">Add A Tool</Link></li>
+                        <li className='rounded hover:bg-cyan-600 hover:text-black dark:hover:text-white '><Link to="/dashboard/makeadmin">Make Admin</Link></li>
+                        <li className='rounded hover:bg-cyan-600 hover:text-black dark:hover:text-white '><Link to="/dashboard/manageproduct">Manage Products</Link></li>
                     </>}
                 </ul>
             </div>

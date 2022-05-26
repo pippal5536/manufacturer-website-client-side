@@ -56,7 +56,7 @@ const MyOrders = () => {
 
     return (
         <div>
-        <h1 className='text-4xl text-center'>My Orders</h1>
+        <h1 className='text-4xl text-center text-blue-600 font-bold'>My <span className='text-cyan-600'>Orders</span></h1>
         <h1 className='text-center m-8'>{orders.length === 0 ? "You have not placed any others yet " : `Order List:${orders.length}`}</h1>
         <div className="overflow-x-auto">
             <table className="table w-full mx-4 ">
@@ -83,10 +83,10 @@ const MyOrders = () => {
                             <td className='dark:bg-gray-800 dark:border'>{order.address}</td>
                             <td className='dark:bg-gray-800 dark:border'>{order.phone}</td>
                             <td className='dark:bg-gray-800 dark:border'>
-                                {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn bg-green-600 w-full  modal-button'>pay</button></Link>}
+                                {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 w-full  modal-button'>pay</button></Link>}
                                 {(order.price && order.paid) && <div>
-                                    <p><span className='text-success'>Paid</span></p>
-                                    <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
+                                    <p><span className=' text-blue-600  '>Paid</span></p>
+                                    <p>Transaction id: <span className=' text-blue-600  '>{order.transactionId}</span></p>
                                 </div>}
                             </td>
                             {/* <!-- The button to open modal --> */}
@@ -117,7 +117,7 @@ const MyOrders = () => {
                                     </label>
 
                                     <label onClick={() => handleDelete(order._id)} htmlFor="my-modal-4" className="btn bg-red-600">Confirm Cancel</label>
-                                    <label  htmlFor="my-modal-4" className="btn bg-green-600 right-16 absolute w-[140px]">Go Back</label>
+                                    <label  htmlFor="my-modal-4" className=" btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 right-16 absolute w-[140px]">Go Back</label>
                                 </div>
                             </label>
                         </tr>)

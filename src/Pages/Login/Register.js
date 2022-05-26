@@ -49,7 +49,7 @@ const Register = () => {
 
     return (
         <section className=" mx-8 min-h-screen">
-            <h1 className='mt-4 text-center text-4xl'>Registration  Page</h1>
+            <h1 className='mt-4 text-center text-4xl font-bold text-blue-600'><span className='text-cyan-600'>Registration</span>  Page</h1>
             <div className="  w-full mt-4">
                 <div className=" grid sm:grid-cols-1 md:grid-cols-2 gap-y-4  ml-6">
                     <div className=" sm:hidden md:block">
@@ -130,7 +130,7 @@ const Register = () => {
 
 
 
-                            <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-[5px] mb-4' type="submit" value="Register" />
+                            <input className=' w-full  text-white    btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 mt-[5px] mb-4' type="submit" value="Register" />
                             {firebaseRegistrationError}
                         </form>
                         <p className=' text-center mt-1 mb-1'>Already An User? Login <Link className='text-blue-600' to="/login">here</Link>.</p>

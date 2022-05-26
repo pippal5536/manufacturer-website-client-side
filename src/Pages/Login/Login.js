@@ -51,7 +51,7 @@ const Login = () => {
     return (
 
         <section className=" mx-8 min-h-screen">
-            <h1 className='mt-4 text-center text-4xl'>Login Page</h1>
+            <h1 className='mt-4 text-center text-4xl font-bold text-cyan-600'>Login <span className='text-blue-600'>Page</span></h1>
             <div className="  w-full mt-4">
                 <div className=" grid sm:grid-cols-1 md:grid-cols-2 gap-y-4  ml-6">
                     <div className=" sm:hidden md:block">
@@ -110,13 +110,13 @@ const Login = () => {
                                     {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                                 </label>
                             </div>
-                            <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-1' type="submit" value="Login" />
+                            <input className=' w-full  text-white    btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 mt-1' type="submit" value="Login" />
                             {firebaseRegistrationError}
                         </form>
                         <p className=' text-center mt-1'>New User? Register <Link className='text-blue-600' to="/register">here</Link>.</p>
                         <div className="divider mt-[-1px] p-2">----OR----</div>
                         {/* Sign in with google */}
-                        <button onClick={() => signInWithGoogle()} className='  bg-gradient-to-r from-gray-500 hover:to-black btn mt-[-12px] mb-4'><span className='flex gap-2'><p>Sign In With Google</p><FcGoogle className='h-[14px] w-[14px]'></FcGoogle></span></button>
+                        <button onClick={() => signInWithGoogle()} className='  btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 mt-[-12px] mb-4'><span className='flex gap-2'><p>Sign In With Google</p><FcGoogle className='h-[14px] w-[14px]'></FcGoogle></span></button>
 
                     </div>
                 </div>

@@ -14,7 +14,7 @@ const DarkMode = ({ darkMode, setDarkMode }) => {
                <div className="hero card   bg-base-100 place-items-center shadow  dark:text-white dark:bg-gray-800">
                 <div className="hero-content text-center">
                     <div>
-                        <h1 className="text-5xl font-bold mt-4">Introducing to DARK MODE!</h1>
+                        <h1 className="text-5xl font-bold mt-4"><span className='text-blue-600'>Introducing To</span> <span className='text-cyan-600'>Dark Mode!</span></h1>
                         <p className="py-6 text-left leading-loose">Dark mode is a low-light user interface (UI) that uses a dark color—usually black or a shade of gray—as the primary background color.You can toogle dark mode or light mode from below or directly from the navbar.</p>
 
                         <label className="swap swap-rotate ">

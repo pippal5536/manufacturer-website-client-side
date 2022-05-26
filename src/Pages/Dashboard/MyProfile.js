@@ -34,7 +34,7 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <h1 className='mt-4 text-center text-4xl'>My Profile Page</h1>
+            <h1 className='mt-4 text-center text-4xl text-blue-600 font-bold'>My <span className='text-cyan-600'>Profile</span> Page</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full mt-1 ">
                     <label className="label ">
@@ -87,7 +87,9 @@ const MyProfile = () => {
                 </div>
                
               
-                <input type="submit" value="Update your profile" className='btn  bg-gradient-to-r from-gray-500 hover:to-black m-4' />
+               <div className='text-center'>
+               <input type="submit" value="Update profile" className='btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 m-4' />
+               </div>
 
             </form>
 

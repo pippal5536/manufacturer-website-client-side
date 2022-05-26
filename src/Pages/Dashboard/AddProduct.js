@@ -30,14 +30,14 @@ const AddProduct = () => {
                     <label className="label ">
                         <span className="dark:text-white label-text mx-4"> Tool Name:</span>
                     </label>
-                    <input  {...register("name")} required type="text"  className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
+                    <input  {...register("name")} required type="text"  className="input dark:bg-gray-900 dark:text-white dark:border-white input-bordered mx-4" />
                 </div>
                 <div className="form-control mt-1 ">
                     <label className="label ">
                         <span className="dark:text-white label-text mx-4"> Tool Image (must be an url):</span>
                     </label>
 
-                    <input  {...register("image")} type="url" required className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
+                    <input  {...register("image")} type="url" required className="input dark:border-white dark:bg-gray-900 dark:text-white input-bordered mx-4" />
 
                 </div>
                 <div className="form-control mt-1 ">
@@ -66,7 +66,7 @@ const AddProduct = () => {
                 </div>
                
                <div className='text-center'>
-               <input type="submit" value="Add a tool" className='btn btn-primary mt-8 ml-4 ' />
+               <input type="submit" value="Add a tool" className='btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600  mt-8 ml-4 ' />
                </div>
 
             </form>

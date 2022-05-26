@@ -25,9 +25,9 @@ const Payment = () => {
         <div className=' m-8'>
             <div className="card  lg:w-[1000px] bg-base-100 dark:bg-gray-800 shadow-xl my-12 ">
                 <div className="card-body ">
-                    <p className="text-success font-bold">Username:{order.userName}</p>
-                    <p className="text-success font-bold">User Email:{order.user}</p>
-                    <h2 className="card-title">Tool Name: {order.tool}</h2>
+                    <p className="text-blue-600 font-bold">Username:{order.userName}</p>
+                    <p className="text-blue-600 font-bold">User Email:{order.user}</p>
+                    <h2 className="card-title text-blue-600">Tool Name: {order.tool}</h2>
                     <p>Purchased Quantity:{order.quantity}</p>
                     <p>Price Per Unit:${order.price}</p>
                     <p>Total Price: ${order.price * order.quantity}</p>

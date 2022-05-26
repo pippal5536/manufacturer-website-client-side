@@ -35,7 +35,7 @@ const Tool = ({ tool }) => {
         <div className="card-actions ">
           {!admin ? <button onClick={() => {
             purchasePage(_id)
-          }} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button> : <button disabled className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>}
+          }} className='btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600'>Purchase</button> : <button disabled className='btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600'>Purchase</button>}
 
         </div>
       </div>

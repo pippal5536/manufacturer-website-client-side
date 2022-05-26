@@ -16,14 +16,14 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         localStorage.removeItem('accessToken');
     };
     const menuItems = <>
-        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/" >Home</Link></li>
+        <li><Link className=' hover:bg-cyan-600 hover:text-black dark:hover:text-white ' to="/" >Home</Link></li>
         {
-            user && <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/dashboard">Dashboard</Link></li>
+            user && <li><Link className=' hover:bg-cyan-600 hover:text-black dark:hover:text-white ' to="/dashboard">Dashboard</Link></li>
         }
-        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/blog">Blog</Link></li>
-        <li><Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/portfolio">My Portfolio</Link></li>
+        <li><Link className=' hover:bg-cyan-600 hover:text-black dark:hover:text-white ' to="/blog">Blog</Link></li>
+        <li><Link className=' hover:bg-cyan-600 hover:text-black dark:hover:text-white ' to="/portfolio">My Portfolio</Link></li>
 
-        <li>{user ? <button className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' onClick={logout} >Log Out</button> : <Link className=' hover:bg-gray-200 hover:text-black dark:hover:text-black ' to="/login">Login</Link>}</li>
+        <li>{user ? <button className=' hover:bg-cyan-600 hover:text-black dark:hover:text-white ' onClick={logout} >Log Out</button> : <Link className=' hover:bg-cyan-600 hover:text-black dark:hover:text-white ' to="/login">Login</Link>}</li>
         <li>{user ? <p>{user?.displayName}</p> : ""}</li>
 
 
@@ -43,7 +43,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         <div className="navbar bg-base-100 dark:bg-gray-800 shadow">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                    <label tabIndex="0" className="btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 lg:hidden">
                         <MenuAlt4Icon className='h-5 w-5'></MenuAlt4Icon>
                     </label>
                     <ul tabIndex="0" className="menu menu-compact  dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 dark:bg-gray-800 dark:text-white">
@@ -51,7 +51,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                     </ul>
 
                 </div>
-                <div className='flex flex-row items-center justify-center hover:bg-gray-200 hover:text-black dark:hover:text-black text-xl rounded p-2'>
+                <div className='flex flex-row items-center justify-center  text-xl rounded p-2'>
                     <figure>
                         <img className='w-[20px] h-[20px] cursor-pointer' src={gear} alt="gear" />
                     </figure>
@@ -65,7 +65,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             </div>
 
             <div className="navbar-end">
-                <label tabIndex="1" htmlFor="sidebar" className="btn btn-ghost lg:hidden swap ">
+                <label tabIndex="1" htmlFor="sidebar" className="btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 lg:hidden swap ">
               <BsLayoutTextSidebar></BsLayoutTextSidebar>
             
                

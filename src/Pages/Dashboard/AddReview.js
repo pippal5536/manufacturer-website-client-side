@@ -31,7 +31,7 @@ const AddReview = () => {
     }
     return (
         <div className='mx-32'>
-            <h1 className='text-center text-4xl m-4 font-bold'>Add A Review!</h1>
+            <h1 className='text-center text-4xl m-4 font-bold text-center text-blue-600'>Add A <span className='text-cyan-600'>Review!</span></h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label className="label ">
@@ -74,7 +74,7 @@ const AddReview = () => {
                         })}
                     />
                 </div>
-                <input className='btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black mt-8' type="submit" value="Add Review" />
+                <input className=' w-full  text-white  btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600   mt-8' type="submit" value="Add Review" />
             </form>
         </div>
     );

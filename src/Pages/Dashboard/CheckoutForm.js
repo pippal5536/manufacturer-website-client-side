@@ -110,7 +110,7 @@ const CheckoutForm = ({ order }) => {
                     }}
                 />
                 <div className=' text-center'>
-                    <button className='btn btn-success btn-sm mt-4 w-[20%] ' type="submit" disabled={!stripe || !clientSecret || success}>
+                    <button className='btn bg-gradient-to-r from-cyan-500 to-blue-500  hover:to-blue-600 btn-sm mt-4 w-[20%] ' type="submit" disabled={!stripe || !clientSecret || success}>
                         Pay
                     </button>
                 </div>
@@ -119,9 +119,9 @@ const CheckoutForm = ({ order }) => {
                 cardError && <p className='text-red-500'>{cardError}</p>
             }
             {
-                success && <div className='text-green-500'>
+                success && <div className='text-green-600'>
                     <p>{success}  </p>
-                    <p>Your transaction Id: <span className="text-orange-500 font-bold">{transactionId}</span> </p>
+                    <p>Your transaction Id: <span className="text-green-600 font-bold">{transactionId}</span> </p>
                 </div>
             }
         </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const Portfolio = () => {
     return (
         <div className=' m-4'>
-            <h1 className='text-center text-4xl font-bold'>My Portfolio</h1>
+            <h1 className='text-center text-4xl font-bold text-blue-600'>My <span className='text-cyan-600'>Portfolio</span></h1>
 
             <div className='m-4 p-4'>
                 <p >First Name: Oishik </p>

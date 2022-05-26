@@ -30,3 +30,8 @@
 14) react spinner for spinner
 
 
+* Some website features
+1) Website is mobile and pc responsive
+2) Secure log in and registration
+3) Jwt token used
+4) Secure payment method used

@@ -24,6 +24,8 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import useAdmin from './Hooks/useAdmin';
+import Error from './Pages/Error';
+import Footer from './Shared/Footer';
 
 
 
@@ -54,9 +56,12 @@ function App() {
             <Route path="makeadmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
             <Route path="manageproduct" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
           </Route>
+          <Route path="*" element={<Error/>}></Route>
         </Routes>
         <ToastContainer />
+        <Footer></Footer>
       </div>
+     
     </div>
   );
 }

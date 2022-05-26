@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from './../../Hooks/useAdmin';
+import Footer from './../../Shared/Footer';
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
@@ -33,6 +34,7 @@ const Dashboard = () => {
                     </>}
                 </ul>
             </div>
+            
         </div>
     );
 };

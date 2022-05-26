@@ -7,6 +7,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import Loading from './../../Shared/Loading';
 import useToken from './../../Hooks/useToken';
+import Footer from './../../Shared/Footer';
 
 
 const Login = () => {
@@ -114,9 +115,9 @@ const Login = () => {
                             {firebaseRegistrationError}
                         </form>
                         <p className=' text-center mt-1'>New User? Register <Link className='text-blue-600' to="/register">here</Link>.</p>
-                        <div className="divider mt-[-1px] ">----OR----</div>
+                        <div className="divider mt-[-1px] p-2">----OR----</div>
                         {/* Sign in with google */}
-                        <button onClick={() => signInWithGoogle()} className='  bg-gradient-to-r from-gray-500 hover:to-black btn mt-[-12px] '><span className='flex gap-2'><p>Sign In With Google</p><FcGoogle className='h-[14px] w-[14px]'></FcGoogle></span></button>
+                        <button onClick={() => signInWithGoogle()} className='  bg-gradient-to-r from-gray-500 hover:to-black btn mt-[-12px] mb-4'><span className='flex gap-2'><p>Sign In With Google</p><FcGoogle className='h-[14px] w-[14px]'></FcGoogle></span></button>
 
                     </div>
                 </div>

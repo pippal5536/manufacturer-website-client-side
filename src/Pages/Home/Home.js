@@ -19,7 +19,6 @@ const Home = ({darkMode, setDarkMode}) => {
             <Reviews></Reviews>
             <DarkMode   darkMode={darkMode} setDarkMode={setDarkMode}> </DarkMode>
             <ContactUs></ContactUs>
-            <Footer></Footer>
         </div>
     );
 };

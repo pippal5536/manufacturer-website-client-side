@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React,{useState} from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../firebase.init';
 import useAdmin from './../../Hooks/useAdmin';
@@ -33,8 +33,10 @@ const Tool = ({ tool }) => {
         <h2 className=" text-lg tracking-tight leading-loose">Price Per Unit:{price}</h2>
         <p className='text-xl text-base tracking-tight leading-loose'>{description}</p>
         <div className="card-actions ">
-
-          {!admin?<button onClick={() => purchasePage(_id)} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>:<button disabled className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>}
+          {/* {!admin ? <button onClick={() => {
+            purchasePage(_id)
+          }} className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button> : <button disabled className='btn  bg-gradient-to-r from-gray-500 hover:to-black'>Purchase</button>} */}
+          <Link to={`/book/${_id}`}>Book</Link>
         </div>
       </div>
     </div>

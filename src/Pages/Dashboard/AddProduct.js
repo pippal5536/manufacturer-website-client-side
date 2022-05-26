@@ -5,9 +5,8 @@ import { useForm } from 'react-hook-form';
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-       console.log(data)
      
-       fetch('http://localhost:4000/tool', {
+       fetch(' https://rocky-depths-16422.herokuapp.com/tool', {
            method: 'POST',
            headers: {
                'content-type': 'application/json'
@@ -16,7 +15,6 @@ const AddProduct = () => {
        })
            .then(res => res.json())
            .then(data => {
-             console.log(data);
               if(data){
                   toast.success("tool  has been added.")
               }

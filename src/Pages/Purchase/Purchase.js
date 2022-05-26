@@ -1,29 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import usePurchase from '../../Hooks/usePurchase';
 import auth from './../../firebase.init';
 import { toast } from 'react-toastify';
+import { useEffect } from 'react';
 
 
 const Purchase = () => {
     const { purchaseId } = useParams();
-    const [purchase] = usePurchase(purchaseId);
+    const [tool, setTool] = useState([]);
+    useEffect(() => {
+        fetch(` https://rocky-depths-16422.herokuapp.com/tool/${purchaseId}`)
+            .then(res => res.json())
+            .then(data => {
+                setTool(data)
+            });
+    }, [])
     const [user] = useAuthState(auth);
-    const { _id, name, quantity, price } = purchase;
-//     let q = parseInt(quantity * (25 / 100))
-// const [minQty,setMinQty] = useState(q);  
-   
-//     const increase = () => {
-//         minQty= setMinQty(minQty+1);
-//     }
-//        const decrease = () => {
-//           minQty= setMinQty(minQty - 1);
-//        }
- 
+    const { _id, name, quantity, price } = tool;
+
     const handlePurchase = event => {
-     
-       
         event.preventDefault();
         const userOrder = {
             toolId: _id,
@@ -34,7 +31,7 @@ const Purchase = () => {
             address: event.target.address.value,
             phone: event.target.phone.value,
         }
-        fetch('http://localhost:4000/purchase', {
+        fetch(' https://rocky-depths-16422.herokuapp.com/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,11 +40,11 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-              console.log(data);
-               if(data){
-                   toast.success("Your tool has been purchased!")
-               }
-             
+                console.log(data);
+                if (data) {
+                    toast.success("Your tool has been purchased!")
+                }
+
             })
 
     }
@@ -55,6 +52,7 @@ const Purchase = () => {
 
     return (
         <section className=" mx-8 ">
+
             <div className=" dark:bg-gray-900 ">
                 <div className="  w-full mt-4">
                     <div className='bg-base-100 dark:bg-gray-800 dark:text-white card shadow   mx-8 grid grid-cols-1 justify-items-center '>
@@ -62,7 +60,6 @@ const Purchase = () => {
                         <form
                             onSubmit={handlePurchase}
                         >
-
                             <div className="form-control w-full mt-1 ">
                                 <label className="label ">
                                     <span className="dark:text-white label-text mx-4"> Your Name:</span>
@@ -101,40 +98,11 @@ const Purchase = () => {
                                     <span className="dark:text-white label-text mx-4"> Your item:</span>
                                 </label>
 
-                                <input type="text" name="tool" disabled value={name} className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
+                                <input type="text" name="tool" value={name} disabled className="input dark:bg-gray-900 dark:text-white input-bordered mx-4" />
 
                             </div>
-                            {/* <div className='my-4'>
-                                <label className="label ">
-                                    <span className="dark:text-white label-text mx-4"> Your Quantity:</span>
-                                </label>
-                                <div className='flex mx-4'>
-                                    {
-                                        minQty < quantity || minQty === quantity ? <button onClick={() => increase()} >Increase</button> : <button disabled className="cursor-not-allowed">Increase</button>
-                                    }
-                                    <input className='text-center dark:bg-gray-900 dark:text-white input input-bordered ' type="number" name="minQty" value={minQty} />
-                                    {
-                                        minQty > q || minQty === q ? <button onClick={decrease} >decrease</button> : <button disabled className="cursor-not-allowed">decrease</button>
-                                    }
 
-                                </div>
-                                <div className='m-4'>
-                                    {
-                                        minQty > q || minQty === q ? "" : <p className='text-sm  text-red-600'> Your quantity can not be lesser than the minimum order quantity</p>
-                                    }
-                                    {
-                                        minQty < quantity || minQty === quantity ? "" : <p className='text-sm  text-red-600'> Your quantity can not be greater than the available order quantity</p>
-                                    }
-                                </div>
-                                <div className=' mt-4 mx-4' >
-                                    {
-                                        minQty >= q && minQty <= quantity ? <input type="submit" value="submit" className="btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black " /> : <input type="submit"
-                                            disabled className="btn w-full  text-white    bg-gradient-to-r from-gray-500 hover:to-black " value="submit" />
-                                    }
-                                </div>
-
-                            </div> */}
-                            <input type="submit" value="submit" className='btn btn-primary' />
+                            <input type="submit" value="submit" className='btn  bg-gradient-to-r from-gray-500 hover:to-black m-8' />
 
                         </form>
 

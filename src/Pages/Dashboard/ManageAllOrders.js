@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
     const [admin] = useAdmin(user);
 
     useEffect(() => {
-        fetch('http://localhost:4000/allorders', {
+        fetch(' https://rocky-depths-16422.herokuapp.com/allorders', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -24,7 +24,7 @@ const ManageAllOrders = () => {
 
     }, [admin])
     const handleDelete = id => {
-        fetch(`http://localhost:4000/purchase/${id}`, {
+        fetch(` https://rocky-depths-16422.herokuapp.com/purchase/${id}`, {
             method: 'DELETE'
 
         })

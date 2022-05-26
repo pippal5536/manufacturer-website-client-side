@@ -6,7 +6,7 @@ import MakeAdminRow from './MakeAdminRow';
 const MakeAdmin = () => {
     const [users, setUsers] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:4000/user', {
+    fetch(' https://rocky-depths-16422.herokuapp.com/user', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

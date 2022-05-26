@@ -16,8 +16,7 @@ const MyProfile = () => {
             phone: data.phone,
             linkedInProfile: data.linkedInProfile
         }
-        console.log(data)
-        fetch(`http://localhost:4000/userProfile`, {
+        fetch(` https://rocky-depths-16422.herokuapp.com/userProfile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -26,7 +25,6 @@ const MyProfile = () => {
         })
             .then(res => res.json())
             .then(data => {
-              console.log(data);
                if(data){
                    toast.success("Your Profile has been updated!")
                }

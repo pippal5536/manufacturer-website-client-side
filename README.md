@@ -30,7 +30,3 @@
 14) react spinner for spinner
 
 
-
-
-* Website Features:
-

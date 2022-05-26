@@ -14,7 +14,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:4000/purchase?user=${user.email}`, {
+            fetch(` https://rocky-depths-16422.herokuapp.com/purchase?user=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -40,7 +40,7 @@ const MyOrders = () => {
 
 
     const handleDelete = id => {
-        fetch(`http://localhost:4000/purchase/${id}`, {
+        fetch(` https://rocky-depths-16422.herokuapp.com/purchase/${id}`, {
             method: 'DELETE'
 
         })

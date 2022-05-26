@@ -9,7 +9,7 @@ const ManageProducts = () => {
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
     useEffect(() => {
-        fetch('http://localhost:4000/tool', {
+        fetch(' https://rocky-depths-16422.herokuapp.com/tool', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,7 +22,7 @@ const ManageProducts = () => {
 
     }, [admin])
     const handleDelete = id => {
-        fetch(`http://localhost:4000/tool/${id}`, {
+        fetch(` https://rocky-depths-16422.herokuapp.com/tool/${id}`, {
             method: 'DELETE'
 
         })

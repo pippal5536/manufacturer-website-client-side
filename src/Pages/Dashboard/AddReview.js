@@ -13,8 +13,7 @@ const AddReview = () => {
             rating: data.rating,
             review: data.review
         }
-        console.log(data)
-        fetch('http://localhost:4000/review', {
+        fetch(' https://rocky-depths-16422.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -23,7 +22,6 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data) {
                     toast.success("Your review has been placed!")
                 }

@@ -7,7 +7,6 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import Loading from './../../Shared/Loading';
 import useToken from './../../Hooks/useToken';
-import Footer from './../../Shared/Footer';
 
 
 const Login = () => {

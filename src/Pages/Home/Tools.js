@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 const Tools = () => {
     // load tools from mongo db in ui
     const { data: tools, isLoading } = useQuery([], () =>
-        fetch('http://localhost:4000/tool')
+        fetch(' https://rocky-depths-16422.herokuapp.com/tool')
             .then(res => res.json())
     )
     if (isLoading) {

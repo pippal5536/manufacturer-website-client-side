@@ -3,7 +3,7 @@ import React from 'react';
 const Shipped = ({order}) => {
     const {_id,approved} = order;
     const handleStatus = () => {
-        fetch(`http://localhost:4000/allorders/${_id}`, {
+        fetch(` https://rocky-depths-16422.herokuapp.com/allorders/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

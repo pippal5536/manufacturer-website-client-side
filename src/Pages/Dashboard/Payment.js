@@ -8,9 +8,8 @@ import CheckoutForm from './CheckoutForm';
 
 const Payment = () => {
     const stripePromise = loadStripe('pk_test_51H7P0cDtreSC9RW6cpFOC9Aj46NUX8rlpVqFcObf1gG3fr8Aae81UoiekUCaAY6ZZex1FcDPd7AjBXMQMVMsaFOe00KtwDVia9');
-    console.log(stripePromise)
     const { id } = useParams();
-    const url = `http://localhost:4000/purchase/${id}`;
+    const url = ` https://rocky-depths-16422.herokuapp.com/purchase/${id}`;
     const { data: order, isLoading } = useQuery(['purchase', id], () => fetch(url, {
         method: 'GET',
         headers: {

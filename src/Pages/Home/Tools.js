@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 
 const Tools = () => {
     // load tools from mongo db in ui
-    const { data: tools, isLoading, refetch } = useQuery([], () =>
+    const { data: tools, isLoading } = useQuery([], () =>
         fetch('http://localhost:4000/tool')
             .then(res => res.json())
     )
